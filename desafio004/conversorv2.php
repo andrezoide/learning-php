@@ -16,7 +16,7 @@
     </h1>
   </header>
   <main>
-    
+
     <section>
       <h2>Conversor de real para dolar</h2>
       <form action="result.php">
@@ -29,11 +29,11 @@
     </section>
   </main>
   <footer>
-  <?php
+    <?php
     $url = "https://economia.awesomeapi.com.br/last/USD-BRL";
     $data = json_decode(file_get_contents($url), true);
     $cotacao = number_format($data["USDBRL"]["high"], 2, ',', '.');
-    echo "O preço do dolar atual é: $cotacao esta sendo puxado da <a target=\"blank\" href=\"https://economia.awesomeapi.com.br/last/USD-BRL\">API</a>";
+    echo "O preço do dolar atual é: $cotacao esta sendo puxado da <a target=\"blank\" href=\"https://economia.awesomeapi.com.br/last/USD-BRL\">API</a><br />";
 
     ?>
   </footer>

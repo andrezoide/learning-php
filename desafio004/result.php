@@ -29,7 +29,7 @@
 
     echo "O valor convertido é igual á: US$" . number_format($finalresult, 2, ",", ".");
     ?>
-    <input type="submit" value="voltar" onclick="history.go(-1)" />
+    <input type="submit" value="voltar" onclick="history.go(-1)"/>
   </main>
   <footer>
     <?php
