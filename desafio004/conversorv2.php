@@ -22,7 +22,7 @@
       <form action="result.php">
         <label>
           quanto tem ai na carteira ?
-          <input type="number" name="number" />
+          <input step="0.001" type="number" name="number" />
         </label>
         <input type="submit" value="converter" />
       </form>
@@ -32,7 +32,7 @@
   <?php
     $url = "https://economia.awesomeapi.com.br/last/USD-BRL";
     $data = json_decode(file_get_contents($url), true);
-    $cotacao = number_format($data["USDBRL"]["high"]);
+    $cotacao = number_format($data["USDBRL"]["high"], 2, ',', '.');
     echo "O preço do dolar atual é: $cotacao esta sendo puxado da <a target=\"blank\" href=\"https://economia.awesomeapi.com.br/last/USD-BRL\">API</a>";
 
     ?>

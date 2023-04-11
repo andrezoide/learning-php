@@ -24,17 +24,18 @@
     $number = $_REQUEST["number"];
     $url = "https://economia.awesomeapi.com.br/last/USD-BRL";
     $data = json_decode(file_get_contents($url), true);
-    $cotacao = number_format($data["USDBRL"]["high"]);
+    $cotacao = (float) str_replace(',', '.', $data["USDBRL"]["high"]);
     $finalresult = $number / $cotacao;
 
-    echo "O valor convertido é igual á: US$$finalresult,00"
+    echo "O valor convertido é igual á: US$" . number_format($finalresult, 2, ",", ".");
     ?>
-    <input type="submit" value="voltar" onclick="history.go(-1)"/>
+    <input type="submit" value="voltar" onclick="history.go(-1)" />
   </main>
   <footer>
     <?php
+    $dolarvalue = number_format($data["USDBRL"]["high"], 2, ',', '.');
 
-    echo "O preço do dolar atual é: $cotacao esta sendo puxado da <a target=\"blank\" href=\"https://economia.awesomeapi.com.br/last/USD-BRL\">API</a>";
+    echo "O preço do dolar atual é: $dolarvalue e esta sendo puxado da <a target=\"blank\" href=\"https://economia.awesomeapi.com.br/last/USD-BRL\">API</a>";
     ?>
   </footer>
 </body>
