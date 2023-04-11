@@ -16,15 +16,7 @@
     </h1>
   </header>
   <main>
-    <?php
-    $url = "https://swapi.dev/api/people/";
-    $result = json_decode(file_get_contents($url));
-
-    foreach($result->results as $currency) {
-      echo $currency->name;
-    };
     
-    ?>
     <section>
       <h2>Conversor de real para dolar</h2>
       <form action="result.php">
@@ -36,6 +28,15 @@
       </form>
     </section>
   </main>
+  <footer>
+  <?php
+    $url = "https://economia.awesomeapi.com.br/last/USD-BRL";
+    $data = json_decode(file_get_contents($url), true);
+    $cotacao = number_format($data["USDBRL"]["high"]);
+    echo "O preço do dolar atual é: $cotacao esta sendo puxado da <a target=\"blank\" href=\"https://economia.awesomeapi.com.br/last/USD-BRL\">API</a>";
+
+    ?>
+  </footer>
 </body>
 
 </html>
