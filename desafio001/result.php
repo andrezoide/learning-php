@@ -23,6 +23,7 @@
     echo "<p> O número informado foi: <strong>$number</strong> <br/>
     Seu antecessor é $floornumber <br/> Seu sucessor é $ceilnumber </p>"
     ?>
+    <input type="button" onclick="history.go(-1)"/>
   </main>
 
 </body>

@@ -22,7 +22,6 @@
     <form method="POST">
       <input type="submit" value="gerar"/>
     </form>
-    
   </main>
 </body>
 
