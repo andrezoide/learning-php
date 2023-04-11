@@ -22,7 +22,7 @@
     ?>
 
     <?php
-    echo "valor do dolar: R$$dolar,00   11/04/2023"
+    echo "valor do dolar fixo no codigo: R$$dolar,00   11/04/2023"
     ?>
     <input type="submit" value="voltar" onclick="history.go(-1)"/>
   </main>
