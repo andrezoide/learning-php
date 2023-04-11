@@ -11,7 +11,7 @@
 
 <body>
   <header>
-    <h1>resultado do teste do cu melado</h1>
+    <h1>resultado do teste do nome censurado</h1>
   </header>
   <main>
     <?php
