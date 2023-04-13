@@ -12,6 +12,14 @@
 <body>
   <?php
   $salary = $_REQUEST["salary"] ?? null;
+  $salarytrated = number_format($salary, 2, ",", ".");
+  const minimum = 1320;
+  $divvalue = $salary / minimum;
+  $minimumsalary = number_format($divvalue,1);
+  $salaryminimun = floor($minimumsalary);
+  $restsalary = $salary - $salaryminimun * minimum;
+  $rest = number_format($restsalary, 2, ",", ".");
+
   ?>
   <header>
     <h1>informe seu salario</h1>
@@ -25,7 +33,18 @@
         <input type="submit" value="Calcular" name="calcular" />
       </form>
     </section>
+    <section class="result">
+      <h1>
+        Resultado final
+      </h1>
+      <?php 
+      echo "Quem recebe um salário de <strong>R$ $salarytrated </strong> ganha <strong>$salaryminimun salários mínimos</strong> + <strong>R$ $rest </strong>"
+      ?>
+    </section>
   </main>
+  <footer class="footer">
+         Valor do salário minimo de 2023: <strong>R$ 1.320,00 </strong>
+  </footer>
 </body>
 
 </html>
