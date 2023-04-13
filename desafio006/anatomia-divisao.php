@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>exercicio 06</title>
+  <title>Desafio 06</title>
 </head>
 
 <body>
@@ -22,16 +22,22 @@
 
     <form action="<?= $_SERVER['PHP_SELF'] ?>" method="get">
       <label for="dividendo">Dividendo<input type="number" name="dividendo" value="<?= $dividendo ?>"></label>
-      <label for="divisor">Divisor  <input type="number" name="divisor" value="<?= $divisor ?>"></label>
+      <label for="divisor">Divisor <input type="number" name="divisor" value="<?= $divisor ?>"></label>
       <input type="submit" value="SOMAR">
     </form>
   </main>
   <section id="resultado">
     <h2>Estrutura da divisão</h2>
-    <?php
-    $result = $dividendo / $divisor;
-    echo "<strong>$result</strong>";
-    ?>
+    <div class="result">
+      <?php
+      $result = $dividendo / $divisor;
+      $tratedresult = number_format($result, 0);
+      $moduleresult = $dividendo % $divisor;
+      echo "<strong>$dividendo</strong>  <strong>$divisor</strong> <br/>";
+      echo "<strong>$moduleresult</strong><strong>$tratedresult</strong>";
+      ?>
+    </div>
+
   </section>
 </body>
 

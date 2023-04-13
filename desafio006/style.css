@@ -226,3 +226,14 @@ input[type=radio] + label, input[type=checkbox] + label {
     background-color: rgba(0, 0, 0, 0);
 }
 
+.result {
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  .result strong {
+    color: blue;
+    font-size: 18px;
+  }
