@@ -12,6 +12,10 @@
 <body>
   <?php
   $number = $_REQUEST["number"] ?? null;
+  $root = sqrt($number);
+  $trateroot = number_format($root, 3, ",");
+  $cubic = $number ** (1/3);
+  $tratedcubic = number_format($cubic, 3, ",");
   ?>
   <header>
     <h1>informe um número</h1>
@@ -19,8 +23,8 @@
   <main>
     <section>
       <form action="<?= $_SERVER['PHP_SELF'] ?>" method="get">
-        <label for="salary">Número
-          <input type="number" name="number" value="<?= $number ?>"/>
+        <label for="number">Número
+          <input type="number" name="number" value="<?= $number ?>" />
         </label>
         <input type="submit" value="Calcular" name="calcular" />
       </form>
@@ -29,8 +33,9 @@
       <h1>
         Resultado final
       </h1>
-      <?php 
-      echo ">"
+      <?php
+      echo "A raiz quadrada de <strong>$number</strong> é <strong>$trateroot</strong> <br/>";
+      echo "A raiz quadrada de <strong>$number é <strong> $tratedcubic</strong>";
       ?>
     </section>
   </main>
