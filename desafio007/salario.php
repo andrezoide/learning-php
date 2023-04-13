@@ -11,7 +11,7 @@
 
 <body>
   <?php
-  $salary = $_REQUEST["salary"];
+  $salary = $_REQUEST["salary"] ?? null;
   ?>
   <header>
     <h1>informe seu salario</h1>
@@ -20,7 +20,7 @@
     <section>
       <form action="<?= $_SERVER['PHP_SELF'] ?>" method="get">
         <label for="salary">Seu Salário
-          <input type="number" name="salary" value="<?= $dividendo ?>"/>
+          <input type="number" name="salary" value="<?= $salary ?>"/>
         </label>
         <input type="submit" value="Calcular" name="calcular" />
       </form>
