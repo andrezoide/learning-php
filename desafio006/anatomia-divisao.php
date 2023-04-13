@@ -14,6 +14,11 @@
   //capturando os dados do formulario
   $dividendo = $_REQUEST["dividendo"] ?? null;
   $divisor = $_REQUEST["divisor"] ?? null;
+
+  //tratamento dos dados
+  $result = $dividendo / $divisor;
+  $tratedresult = number_format($result, 0);
+  $moduleresult = $dividendo % $divisor;
   ?>
   <header>
     <h1>Anatomia de uma Divisão</h1>
@@ -28,13 +33,14 @@
   </main>
   <section id="resultado">
     <h2>Estrutura da divisão</h2>
-    <div class="result">
+    <div class="dividend">
       <?php
-      $result = $dividendo / $divisor;
-      $tratedresult = number_format($result, 0);
-      $moduleresult = $dividendo % $divisor;
-      echo "<strong>$dividendo</strong>  <strong>$divisor</strong> <br/>";
-      echo "<strong>$moduleresult</strong><strong>$tratedresult</strong>";
+      echo "<strong>$dividendo</strong> <strong>$divisor</strong><br/>";
+      ?>
+    </div>
+    <div class="tratedresult">
+      <?php
+      echo "<strong>$moduleresult</strong> <strong>$tratedresult</strong>";
       ?>
     </div>
 
