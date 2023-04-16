@@ -11,9 +11,17 @@
 
 <body>
   <?php
+  $timeweek = 604800;
+  $timeday = 86400;
+  $timehour = 3600;
+  $timeminute = 60;
   $seconds = $_REQUEST["seconds"];
+  $weeks = floor($seconds / $timeweek);
+  $days = floor(($seconds % $timeweek) / $timeday);
+  $hours = floor(($seconds % $timeday) / $timehour);
+  $minutes = floor(($seconds % $timehour) / $timeminute);
+  $secondss = $seconds % $timeminute;
 
-  $week = $seconds 
   ?>
   <header>
     <h1>
@@ -33,7 +41,7 @@
         Totalizando tudo
       </h2>
       <?php 
-      echo "Analisando o valorq ue você digitou, <strong>$seconds segunds</strong> equivalem a um total de: <br/>";
+      echo "Analisando o valor que você digitou, <strong>$seconds segundos</strong> equivalem a um total de: <br/>";
       echo "<li>$weeks Semanas</li> <br/>";
       echo "<li>$days Dias</li> <br/>";
       echo "<li>$hours Horas</li> <br/>";
