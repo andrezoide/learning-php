@@ -248,3 +248,6 @@ input[type=checkbox]+label {
     background-color: rgba(0, 0, 0, 0);
 }
 
+img {
+    width: 200px;
+}

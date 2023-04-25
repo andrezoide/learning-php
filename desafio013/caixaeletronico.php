@@ -10,6 +10,9 @@
 </head>
 
 <body>
+  <?php
+  $value = $_REQUEST["value"];
+  ?>
   <header>
     <h1>
       Caixa eletronico
@@ -22,7 +25,34 @@
           Valor:
           <input type="number" name="value" value="<?= $value ?>">
         </label>
+        <input type="submit" value="Depositar">
       </form>
+
+      <h2>
+        Notas disponiveis
+      </h2>
+      <div>
+        <ul>
+          <li>
+            <img src="notas/2.PNG" alt="Nota de 2 reais">
+          </li>
+          <li>
+            <img src="notas/5.PNG" alt="Nota de 5 reais">
+          </li>
+          <li>
+            <img src="notas/10.PNG" alt="Nota de 10 reais">
+          </li>
+          <li>
+            <img src="notas/20.PNG" alt="Nota de 20 reais">
+          </li>
+          <li>
+            <img src="notas/50.PNG" alt="Nota de 50 reais">
+          </li>
+          <li>
+            <img src="notas/100.PNG" alt="Nota de 100 reais">
+          </li>
+        </ul>
+      </div>
     </section>
   </main>
 </body>
