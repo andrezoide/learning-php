@@ -30,7 +30,7 @@
   </header>
   <main>
     <section>
-      <form action="<?= $_SERVER['PHP_SELF'] ?>" method="get"">
+      <form action="<?= $_SERVER['PHP_SELF'] ?>" method="get">
         <label for="seconds">
           Segundos
         </label>
