@@ -30,32 +30,40 @@
       <?php
       $requestvalue = $_REQUEST["value"];
       $value = (int)number_format($requestvalue, 2, ",", ".");
-      $cash5 = 5;
-      $cash10 = 10;
-      $cash50 = 50;
-      $cash100 = 100;
-
-      echo "<h2> Quantidade de notas para R$$value </h2>";
-      ?>
-      <?php
-      echo ""
+      $cash5 = floor(($value / 5) % 2);
+      $cash10 = floor(($value / 10) % 5);
+      $cash50 = floor(($value / 50) % 2);
+      $cash100 = floor(($value / 100) % 50);
+      if ($value % 10 == 1 || $value % 10 == 2 || $value % 10 == 3 || $value % 10 == 4 || $value % 10 == 6 || $value % 10 == 7 || $value % 10 == 8 || $value % 10 == 9) {
+        echo "<p style='color:red;'>Valor inválido!</p>";
+      } else {
+        echo "<h2> Quantidade de notas para R$$value </h2>";
+        // código para exibir a lista de notas
+      }
       ?>
       <ul>
         <li>
-          <?php 
-          if ($value % 2 == 0 or $value /  == 1){
-            echo "<script>alert('valor invalido');</script>";
-          }
+          <?php
+          echo "$cash5";
           ?>
           <img src="notas/5.PNG" alt="5reais">
         </li>
         <li>
+          <?php
+          echo "$cash10";
+          ?>
           <img src="notas/10.PNG" alt="10reais">
         </li>
         <li>
+          <?php
+          echo "$cash50";
+          ?>
           <img src="notas/50.PNG" alt="Nota de 50 reais">
         </li>
         <li>
+          <?php
+          echo "$cash100";
+          ?>
           <img src="notas/100.PNG" alt="Nota de 100 reais">
         </li>
       </ul>

@@ -251,3 +251,9 @@ input[type=checkbox]+label {
 img {
     width: 200px;
 }
+
+input:invalid + .error {
+    display: block;
+    color: red;
+    margin-top: 5px;
+}
