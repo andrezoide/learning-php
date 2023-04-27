@@ -12,8 +12,11 @@
   <h1>
     hello world
   </h1>
-  @if($name == "andre") <p> take your {{$juice}} {{$name}} </p> @endif
-
+  @if($name == "andre")
+  <p> take your {{$juice}} {{$name}} </p> 
+  @else
+  <p>the juice is not for you</p>
+  @endif
 </body>
 
 </html>
