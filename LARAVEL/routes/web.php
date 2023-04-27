@@ -14,5 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $name = "andre";
+    $juice = "orange juice";
+    return view('welcome', ['name' => $name, 'juice' => $juice]);
+});
+
+Route::get('/contact', function () {
+    return view('contact');
 });
